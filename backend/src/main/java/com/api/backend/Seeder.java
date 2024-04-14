@@ -142,7 +142,7 @@ public class Seeder {
 
             Faker faker = new Faker();
 
-            for(String a: articles){
+            for (String a : articles) {
                 Reference ar = new Reference();
                 ar.setName(a);
                 ar.setSlug(CommonHelper.slugify(a));
@@ -154,7 +154,7 @@ public class Seeder {
                 ReferenceService.saveOrUpdate(ar);
             }
 
-            for(String t: tags){
+            for (String t : tags) {
                 Reference at = new Reference();
                 at.setName(t);
                 at.setSlug(CommonHelper.slugify(t));
@@ -166,7 +166,7 @@ public class Seeder {
                 ReferenceService.saveOrUpdate(at);
             }
 
-            for(String p: portfolios){
+            for (String p : portfolios) {
                 Reference ap = new Reference();
                 ap.setName(p);
                 ap.setSlug(CommonHelper.slugify(p));
@@ -183,11 +183,9 @@ public class Seeder {
 
     private void CreateContact() throws ParseException {
         Long TotalRows = ContactService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
-            for(int i = 1; i <= 10; i++)
-            {
+            for (int i = 1; i <= 10; i++) {
                 Contact contact = new Contact();
                 contact.setName(faker.name().name());
                 contact.setEmail(faker.internet().emailAddress());
@@ -203,13 +201,11 @@ public class Seeder {
 
     private void CreateCustomer() throws ParseException {
         Long TotalRows = CustomerService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
-            for(int i = 1; i <= 10; i++)
-            {
+            for (int i = 1; i <= 10; i++) {
                 Customer customer = new Customer();
-                customer.setImage("customer"+i+".jpg");
+                customer.setImage("customer" + i + ".jpg");
                 customer.setName(faker.company().name());
                 customer.setEmail(faker.internet().emailAddress());
                 customer.setPhone(faker.phoneNumber().phoneNumber());
@@ -225,11 +221,9 @@ public class Seeder {
 
     private void CreateFaq() throws ParseException {
         Long TotalRows = FaqService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
-            for(int i = 1; i <= 10; i++)
-            {
+            for (int i = 1; i <= 10; i++) {
                 Faq faq = new Faq();
                 faq.setQuestion(faker.lorem().sentence());
                 faq.setAnswer(faker.lorem().paragraph());
@@ -244,24 +238,22 @@ public class Seeder {
 
     private void CreateService() throws ParseException {
         Long TotalRows = ServiceService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             String[] icons = {
-                "fas fa-archive",
-                "fas fa-atom",
-                "fas fa-award",
-                "fas fa-balance-scale",
-                "fas fa-blender",
-                "fas fa-book-reader",
-                "fas fa-box-open",
-                "fas fa-cash-register",
-                "fas fa-cloud-download-alt",
+                    "fas fa-archive",
+                    "fas fa-atom",
+                    "fas fa-award",
+                    "fas fa-balance-scale",
+                    "fas fa-blender",
+                    "fas fa-book-reader",
+                    "fas fa-box-open",
+                    "fas fa-cash-register",
+                    "fas fa-cloud-download-alt",
             };
 
             Faker faker = new Faker();
             int i = 0;
-            for(String icon: icons)
-            {
+            for (String icon : icons) {
                 Service service = new Service();
                 service.setIcon(icon);
                 service.setTitle(faker.lorem().sentence());
@@ -279,13 +271,11 @@ public class Seeder {
 
     private void CreateSlider() throws ParseException {
         Long TotalRows = SliderService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
-            for(int i = 1; i <= 5; i++)
-            {
+            for (int i = 1; i <= 5; i++) {
                 Slider slider = new Slider();
-                slider.setImage("slider"+i+".jpg");
+                slider.setImage("slider" + i + ".jpg");
                 slider.setTitle(faker.lorem().sentence());
                 slider.setDescription(faker.lorem().paragraph(2));
                 slider.setSort(i);
@@ -299,13 +289,11 @@ public class Seeder {
 
     private void CreateTeam() throws ParseException {
         Long TotalRows = TeamService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
-            for(int i = 1; i <= 10; i++)
-            {
+            for (int i = 1; i <= 10; i++) {
                 Team team = new Team();
-                team.setImage("team"+i+".jpg");
+                team.setImage("team" + i + ".jpg");
                 team.setName(faker.name().name());
                 team.setEmail(faker.internet().emailAddress());
                 team.setPhone(faker.phoneNumber().phoneNumber());
@@ -326,19 +314,17 @@ public class Seeder {
 
     private void CreateTestimonial() throws ParseException {
         Long TotalRows = TestimonialService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
             List<Customer> customers = CustomerService.getAll();
-            for(int i = 0; i < customers.size(); i++)
-            {
+            for (int i = 0; i < customers.size(); i++) {
                 Testimonial testimonial = new Testimonial();
                 testimonial.setCustomer(customers.get(i));
-                testimonial.setImage("testimonial"+i+".jpg");
+                testimonial.setImage("testimonial" + i + ".jpg");
                 testimonial.setName(faker.name().name());
                 testimonial.setPosition(CommonHelper.capitalize(faker.company().profession()));
                 testimonial.setQuote(faker.lorem().paragraph());
-                testimonial.setSort(i+1);
+                testimonial.setSort(i + 1);
                 testimonial.setStatus(1);
                 testimonial.setCreatedAt(CommonHelper.DateNow());
                 testimonial.setUpdatedAt(CommonHelper.DateNow());
@@ -349,12 +335,10 @@ public class Seeder {
 
     private void CreatePortofolio() throws ParseException {
         Long TotalRows = PortfolioService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
 
-            for(int i = 1; i <=9; i++)
-            {
+            for (int i = 1; i <= 9; i++) {
                 Reference category = ReferenceService.getRandom(3, 1).get(0);
                 Customer customer = CustomerService.getRandom(1).get(0);
 
@@ -371,11 +355,10 @@ public class Seeder {
                 portfolio.setUpdatedAt(CommonHelper.DateNow());
                 PortfolioService.saveOrUpdate(portfolio);
 
-                for(int j = 1; j <= 4; j++)
-                {
-                    PortfolioImage pg  = new PortfolioImage();
+                for (int j = 1; j <= 4; j++) {
+                    PortfolioImage pg = new PortfolioImage();
                     pg.setPortfolio(portfolio);
-                    pg.setImage("portfolio"+j+".jpg");
+                    pg.setImage("portfolio" + j + ".jpg");
                     pg.setStatus(j == 1 ? 1 : 0);
                     pg.setCreatedAt(CommonHelper.DateNow());
                     pg.setUpdatedAt(CommonHelper.DateNow());
@@ -390,14 +373,12 @@ public class Seeder {
 
     private void CreateArticle() throws ParseException {
         Long TotalRows = ArticleService.TotalRows();
-        if(TotalRows == 0)
-        {
+        if (TotalRows == 0) {
             Faker faker = new Faker();
             List<User> users = UserService.getAll();
 
 
-            for(int i = 0; i < users.size(); i++)
-            {
+            for (int i = 0; i < users.size(); i++) {
                 User user = users.get(i);
                 int num = i + 1;
                 String title = faker.lorem().sentence();
@@ -407,20 +388,18 @@ public class Seeder {
 
                 Set<Reference> references = new HashSet<Reference>();
 
-                for(Reference cc: categories)
-                {
+                for (Reference cc : categories) {
                     references.add(cc);
                 }
 
-                for(Reference tag: tags)
-                {
+                for (Reference tag : tags) {
                     references.add(tag);
                 }
 
                 Article article = new Article();
                 article.setReferences(references);
                 article.setUser(user);
-                article.setImage("article"+num+".jpg");
+                article.setImage("article" + num + ".jpg");
                 article.setTitle(title);
                 article.setSlug(slug);
                 article.setDescription(faker.lorem().paragraph(3));
@@ -431,8 +410,7 @@ public class Seeder {
                 ArticleService.saveOrUpdate(article);
 
                 List<User> comments = UserService.getRandomNot(2, user.getId());
-                for(User comment: comments)
-                {
+                for (User comment : comments) {
                     ArticleComment ac = new ArticleComment();
                     ac.setUser(comment);
                     ac.setArticle(article);
