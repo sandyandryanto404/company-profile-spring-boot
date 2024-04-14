@@ -1,3 +1,14 @@
+/**
+ * This file is part of the Sandy Andryanto Company Profile Website.
+ *
+ * @author     Sandy Andryanto <sandy.andryanto404@gmail.com>
+ * @copyright  2024
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE.md file that was distributed
+ * with this source code.
+ */
+
 package com.api.backend.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -27,7 +38,7 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE })
     @JoinTable(name = "articles_references", joinColumns = @JoinColumn(name = "article_id"),
             inverseJoinColumns = @JoinColumn(name = "reference_id"))
     private Set<Reference> References;
