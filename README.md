@@ -52,6 +52,7 @@
 
 <ol type="1">
 	<li>Eclipse 4.31.0</li>
+	<li>Visual Studio Code</li>
 	<li>Modern Web Browser</li>
 	<li>Git 2.4</li>
 	<li>
