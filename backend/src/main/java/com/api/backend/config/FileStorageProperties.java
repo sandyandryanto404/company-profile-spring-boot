@@ -9,7 +9,7 @@
  * with this source code.
  */
 
-package com.api.backend.utilities;
+package com.api.backend.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

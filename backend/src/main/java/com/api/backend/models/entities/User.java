@@ -44,6 +44,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
+    private String Username;
+    
     @Column(nullable = false, columnDefinition = "varchar(191)", unique = true)
     private String Email;
 
