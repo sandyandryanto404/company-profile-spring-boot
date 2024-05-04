@@ -16,9 +16,17 @@ import com.api.backend.models.entities.User;
 import java.util.List;
 
 public interface UserService {
-    Long TotalRows();
-    User saveOrUpdate(User model);
-    List<User> getAll();
-    List<User> getRandomNot(int limit, long user_id);
-    User findByEmail(String email);
+	Long TotalRows();
+
+	User saveOrUpdate(User model);
+
+	List<User> getAll();
+
+	List<User> getRandomNot(int limit, long user_id);
+
+	User findByEmail(String email);
+
+	User findByToken(String token);
+
+	User findByPhone(String phone);
 }

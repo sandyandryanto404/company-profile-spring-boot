@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Service;
 
 public interface ServiceService {
-    Long TotalRows();
-    Service saveOrUpdate(Service model);
+
+	Long TotalRows();
+
+	Service saveOrUpdate(Service model);
 }

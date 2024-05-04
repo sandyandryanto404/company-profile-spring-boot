@@ -52,7 +52,7 @@ public class User {
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String Password;
 
-    @Column(nullable = false, columnDefinition = "varchar(64)", unique = true)
+    @Column(nullable = true, columnDefinition = "varchar(64)", unique = true)
     private String Phone;
 
     @Column(nullable = true, columnDefinition = "varchar(191)")

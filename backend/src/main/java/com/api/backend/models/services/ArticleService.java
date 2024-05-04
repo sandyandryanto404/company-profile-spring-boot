@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Article;
 
 public interface ArticleService {
-    Long TotalRows();
-    Article saveOrUpdate(Article model);
+	
+	Long TotalRows();
+
+	Article saveOrUpdate(Article model);
 }

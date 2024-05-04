@@ -11,7 +11,10 @@
 
 package com.api.backend.controllers;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.MediaType;
 import org.springframework.http.HttpHeaders;
 import org.springframework.core.io.Resource;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.api.backend.models.request.FormMessage;
@@ -86,27 +90,12 @@ public class PageController {
 		return new ResponseEntity<Object>(new JsonResponse(true, "ok", null), HttpStatus.OK);
 	}
 
-	@GetMapping("/page/download/{fileName:.+}")
-	public ResponseEntity<?> Download(@PathVariable String fileName, HttpServletRequest request) {
-		// Load file as Resource
+	@GetMapping(value = "/page/file/{fileName:.+}", produces = MediaType.IMAGE_JPEG_VALUE)
+	public @ResponseBody byte[] GetFile(@PathVariable String fileName) throws IOException {
 		Resource resource = fileStorageService.loadFileAsResource(fileName);
-
-		// Try to determine file's content type
-		String contentType = null;
-		try {
-			contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-		} catch (IOException ex) {
-			logger.info("Could not determine file type.");
-		}
-
-		// Fallback to the default content type if type could not be determined
-		if (contentType == null) {
-			contentType = "application/octet-stream";
-		}
-
-		return ResponseEntity.ok().contentType(MediaType.parseMediaType(contentType))
-				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-				.body(resource);
+		File initialFile = new File(resource.getFile().getAbsolutePath());
+		InputStream inputStream = new FileInputStream(initialFile);
+		return IOUtils.toByteArray(inputStream);
 	}
 
 }

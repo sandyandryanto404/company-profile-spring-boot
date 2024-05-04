@@ -50,4 +50,16 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return repo.findByEmail(email);
 	}
+
+	@Override
+	public User findByToken(String token) {
+		// TODO Auto-generated method stub
+		return repo.findByToken(token);
+	}
+
+	@Override
+	public User findByPhone(String phone) {
+		// TODO Auto-generated method stub
+		return repo.findByPhone(phone);
+	}
 }

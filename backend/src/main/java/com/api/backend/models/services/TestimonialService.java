@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Testimonial;
 
 public interface TestimonialService {
-    Long TotalRows();
-    Testimonial saveOrUpdate(Testimonial model);
+
+	Long TotalRows();
+
+	Testimonial saveOrUpdate(Testimonial model);
 }

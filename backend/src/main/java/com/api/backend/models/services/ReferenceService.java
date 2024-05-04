@@ -16,7 +16,10 @@ import com.api.backend.models.entities.Reference;
 import java.util.List;
 
 public interface ReferenceService {
-    Long TotalRows();
-    Reference saveOrUpdate(Reference model);
-    List<Reference> getRandom(int type, int limit);
+	
+	Long TotalRows();
+
+	Reference saveOrUpdate(Reference model);
+
+	List<Reference> getRandom(int type, int limit);
 }

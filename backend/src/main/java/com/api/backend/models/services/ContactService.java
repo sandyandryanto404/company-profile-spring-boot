@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Contact;
 
 public interface ContactService {
-    Long TotalRows();
-    Contact saveOrUpdate(Contact model);
+	
+	Long TotalRows();
+
+	Contact saveOrUpdate(Contact model);
 }

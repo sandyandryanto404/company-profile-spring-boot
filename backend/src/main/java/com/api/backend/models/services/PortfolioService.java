@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Portfolio;
 
 public interface PortfolioService {
-    Long TotalRows();
-    Portfolio saveOrUpdate(Portfolio model);
+
+	Long TotalRows();
+
+	Portfolio saveOrUpdate(Portfolio model);
 }

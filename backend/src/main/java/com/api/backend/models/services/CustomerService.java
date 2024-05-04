@@ -16,8 +16,12 @@ import com.api.backend.models.entities.Customer;
 import java.util.List;
 
 public interface CustomerService {
-    Long TotalRows();
-    Customer saveOrUpdate(Customer model);
-    List<Customer> getAll();
-    List<Customer> getRandom(int limit);
+	
+	Long TotalRows();
+
+	Customer saveOrUpdate(Customer model);
+
+	List<Customer> getAll();
+
+	List<Customer> getRandom(int limit);
 }

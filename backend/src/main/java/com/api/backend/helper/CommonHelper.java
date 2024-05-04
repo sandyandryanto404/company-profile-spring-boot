@@ -9,6 +9,11 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+
+import com.api.backend.models.entities.User;
+
 public class CommonHelper {
 
     private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
@@ -33,4 +38,8 @@ public class CommonHelper {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
+    public static String AuthCredential(){
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return auth.getName();
+	}
 }

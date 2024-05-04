@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Slider;
 
 public interface SliderService {
-    Long TotalRows();
-    Slider saveOrUpdate(Slider model);
+
+	Long TotalRows();
+
+	Slider saveOrUpdate(Slider model);
 }

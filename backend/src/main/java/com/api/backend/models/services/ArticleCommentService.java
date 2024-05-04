@@ -14,5 +14,5 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.ArticleComment;
 
 public interface ArticleCommentService {
-    ArticleComment saveOrUpdate(ArticleComment model);
+	ArticleComment saveOrUpdate(ArticleComment model);
 }

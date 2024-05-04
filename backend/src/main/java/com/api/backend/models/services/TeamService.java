@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Team;
 
 public interface TeamService {
-    Long TotalRows();
-    Team saveOrUpdate(Team model);
+
+	Long TotalRows();
+
+	Team saveOrUpdate(Team model);
 }

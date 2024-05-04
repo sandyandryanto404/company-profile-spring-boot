@@ -14,6 +14,8 @@ package com.api.backend.models.services;
 import com.api.backend.models.entities.Faq;
 
 public interface FaqService {
-    Long TotalRows();
-    Faq saveOrUpdate(Faq model);
+	
+	Long TotalRows();
+
+	Faq saveOrUpdate(Faq model);
 }

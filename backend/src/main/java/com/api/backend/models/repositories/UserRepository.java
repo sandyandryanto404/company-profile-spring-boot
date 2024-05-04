@@ -30,4 +30,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     
     @Query(value = "select * from public.users x where x.email = ?1  limit 1", nativeQuery = true)
 	User findByEmail(String email);
+    
+    @Query(value = "select * from public.users x where x.phone = ?1  limit 1", nativeQuery = true)
+	User findByPhone(String phone);
+    
+    @Query(value = "select * from public.users x where x.confirm_token = ?1 and x.status = 0 limit 1", nativeQuery = true)
+	User findByToken(String token);
 }
