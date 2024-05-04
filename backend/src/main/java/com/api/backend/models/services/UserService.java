@@ -20,4 +20,5 @@ public interface UserService {
     User saveOrUpdate(User model);
     List<User> getAll();
     List<User> getRandomNot(int limit, long user_id);
+    User findByEmail(String email);
 }

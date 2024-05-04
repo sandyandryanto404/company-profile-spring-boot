@@ -88,7 +88,7 @@ cd company-profile-spring-boot
 mvn dependency:resolve
 ```
 
-#### 3. Make a .env file and customize its settings 
+#### 3. Make a .env.properties.example file and customize its settings 
 ```shell
 APP_PORT=8000
 DB_HOST=localhost

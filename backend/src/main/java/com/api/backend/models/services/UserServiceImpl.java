@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getRandomNot(int limit, long user_id) {
         return repo.getRandomNot(limit, user_id);
     }
+
+	@Override
+	public User findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return repo.findByEmail(email);
+	}
 }

@@ -240,15 +240,15 @@ public class Seeder {
         Long TotalRows = ServiceService.TotalRows();
         if (TotalRows == 0) {
             String[] icons = {
-                    "fas fa-archive",
-                    "fas fa-atom",
-                    "fas fa-award",
-                    "fas fa-balance-scale",
-                    "fas fa-blender",
-                    "fas fa-book-reader",
-                    "fas fa-box-open",
-                    "fas fa-cash-register",
-                    "fas fa-cloud-download-alt",
+            		"bi bi-bicycle",
+                    "bi bi-bookmarks",
+                    "bi bi-box",
+                    "bi bi-building-add",
+                    "bi bi-calendar2-check",
+                    "bi bi-cart4",
+                    "bi bi-clipboard-data",
+                    "bi bi-gift",
+                    "bi bi-person-bounding-box"
             };
 
             Faker faker = new Faker();

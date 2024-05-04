@@ -27,4 +27,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(value = "select * from public.users WHERE id != ?2 order by random() limit ?1", nativeQuery = true)
     List<User> getRandomNot(int limit, long user_id);
+    
+    @Query(value = "select * from public.users x where x.email = ?1  limit 1", nativeQuery = true)
+	User findByEmail(String email);
 }
