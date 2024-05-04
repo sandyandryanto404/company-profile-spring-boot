@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Team;
 
 public interface TeamService {
@@ -18,4 +20,6 @@ public interface TeamService {
 	Long TotalRows();
 
 	Team saveOrUpdate(Team model);
+	
+	List<Team> findAll(String orderBy,  int Limit);
 }

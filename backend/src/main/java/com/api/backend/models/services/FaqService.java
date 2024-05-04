@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Faq;
 
 public interface FaqService {
@@ -18,4 +20,6 @@ public interface FaqService {
 	Long TotalRows();
 
 	Faq saveOrUpdate(Faq model);
+	
+	List<Faq> findAll(String where, String orderBy,  int Limit);
 }

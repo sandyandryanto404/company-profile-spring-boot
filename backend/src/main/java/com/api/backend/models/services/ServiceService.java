@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Service;
 
 public interface ServiceService {
@@ -18,4 +20,6 @@ public interface ServiceService {
 	Long TotalRows();
 
 	Service saveOrUpdate(Service model);
+	
+	List<Service> findAll(String orderBy, int Limit);
 }

@@ -12,6 +12,9 @@
 package com.api.backend.models.services;
 
 import com.api.backend.models.repositories.ServiceRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +34,10 @@ public class ServiceServiceImpl implements ServiceService{
         repo.save(model);
         return model;
     }
+
+	@Override
+	public List<com.api.backend.models.entities.Service> findAll(String orderBy, int Limit) {
+		// TODO Auto-generated method stub
+		return repo.findAll(orderBy,  Limit);
+	}
 }

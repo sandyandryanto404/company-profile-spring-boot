@@ -13,6 +13,9 @@ package com.api.backend.models.services;
 
 import com.api.backend.models.entities.Faq;
 import com.api.backend.models.repositories.FaqRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,4 +35,10 @@ public class FaqServiceImpl implements FaqService {
         repo.save(model);
         return model;
     }
+
+	@Override
+	public List<Faq> findAll(String where, String orderBy, int Limit) {
+		// TODO Auto-generated method stub
+		return findAll(where,  orderBy, Limit);
+	}
 }

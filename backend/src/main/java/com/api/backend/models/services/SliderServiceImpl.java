@@ -13,23 +13,32 @@ package com.api.backend.models.services;
 
 import com.api.backend.models.entities.Slider;
 import com.api.backend.models.repositories.SliderRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SliderServiceImpl implements SliderService {
 
-    @Autowired
-    private SliderRepository repo;
+	@Autowired
+	private SliderRepository repo;
 
-    @Override
-    public Long TotalRows() {
-        return this.repo.count();
-    }
+	@Override
+	public Long TotalRows() {
+		return this.repo.count();
+	}
 
-    @Override
-    public Slider saveOrUpdate(Slider model) {
-        repo.save(model);
-        return model;
-    }
+	@Override
+	public Slider saveOrUpdate(Slider model) {
+		repo.save(model);
+		return model;
+	}
+
+	@Override
+	public List<Slider> findAll(String orderBy, int Limit) {
+		// TODO Auto-generated method stub
+		return repo.findAll(orderBy,  Limit);
+	}
 }

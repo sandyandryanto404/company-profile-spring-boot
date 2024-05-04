@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Testimonial;
 
 public interface TestimonialService {
@@ -18,4 +20,6 @@ public interface TestimonialService {
 	Long TotalRows();
 
 	Testimonial saveOrUpdate(Testimonial model);
+	
+	List<Testimonial> findAll(String orderBy, int Limit);
 }

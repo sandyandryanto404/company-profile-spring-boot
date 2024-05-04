@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Slider;
 
 public interface SliderService {
@@ -18,4 +20,6 @@ public interface SliderService {
 	Long TotalRows();
 
 	Slider saveOrUpdate(Slider model);
+	
+	List<Slider> findAll(String orderBy, int Limit);
 }

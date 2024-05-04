@@ -11,11 +11,16 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Article;
+import com.api.backend.models.entities.Testimonial;
 
 public interface ArticleService {
 	
 	Long TotalRows();
 
 	Article saveOrUpdate(Article model);
+	
+	List<Article> findAll(String orderBy, int Limit);
 }

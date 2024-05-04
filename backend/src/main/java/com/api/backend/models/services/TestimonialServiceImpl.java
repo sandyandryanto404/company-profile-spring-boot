@@ -13,6 +13,9 @@ package com.api.backend.models.services;
 
 import com.api.backend.models.entities.Testimonial;
 import com.api.backend.models.repositories.TestimonialRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,4 +35,10 @@ public class TestimonialServiceImpl implements TestimonialService {
         repo.save(model);
         return model;
     }
+
+	@Override
+	public List<Testimonial> findAll(String orderBy, int Limit) {
+		// TODO Auto-generated method stub
+		return repo.findAll(orderBy,  Limit);
+	}
 }

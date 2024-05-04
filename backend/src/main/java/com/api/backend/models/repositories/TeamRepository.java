@@ -12,6 +12,9 @@
 package com.api.backend.models.repositories;
 
 import com.api.backend.models.entities.Team;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -19,4 +22,7 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
 
     @Query(value = "select count(*) from public.teams x where x.id <> 0", nativeQuery = true)
     long count();
+    
+    @Query(value = "select x.* from public.teams x where x.status = 1 order by ?1 LIMIT ?2", nativeQuery = true)
+    List<Team> findAll(String orderBy,  int Limit);
 }
