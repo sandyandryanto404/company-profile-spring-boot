@@ -44,6 +44,7 @@ import com.api.backend.models.entities.Service;
 import com.api.backend.helper.CommonHelper;
 import com.api.backend.models.entities.Article;
 import com.api.backend.models.entities.Customer;
+import com.api.backend.models.request.ArticleResult;
 import com.api.backend.models.request.FormMessage;
 import com.api.backend.models.request.FormSubscribe;
 import com.api.backend.models.services.FileStorageService;
@@ -110,7 +111,7 @@ public class PageController {
 		List<Slider> sliders = SliderService.findAll("random()", 100);
 		List<Service> services = ServiceService.findAll("random()", 4);
 		List<Testimonial> testimonials = TestimonialService.findAll("random()", 1);
-		List<Article> articles = ArticleService.findAll("random()", 3);
+		List<ArticleResult> articles = ArticleService.findAll("random()", 3);
 		
 		result.put("header", header);
 		result.put("sliders", sliders);

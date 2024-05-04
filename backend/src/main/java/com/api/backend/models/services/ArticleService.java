@@ -14,7 +14,7 @@ package com.api.backend.models.services;
 import java.util.List;
 
 import com.api.backend.models.entities.Article;
-import com.api.backend.models.entities.Testimonial;
+import com.api.backend.models.request.ArticleResult;
 
 public interface ArticleService {
 	
@@ -22,5 +22,15 @@ public interface ArticleService {
 
 	Article saveOrUpdate(Article model);
 	
-	List<Article> findAll(String orderBy, int Limit);
+	List<ArticleResult> findAll(String orderBy, int Limit);
+	
+	ArticleResult findBySlug(String slug);
+	
+	ArticleResult NewFirst();
+	
+	List<ArticleResult> Teaser();
+	
+	long TotalPublished();
+	
+	Article findBy(Long id);
 }
