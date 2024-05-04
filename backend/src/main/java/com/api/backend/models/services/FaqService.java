@@ -21,5 +21,7 @@ public interface FaqService {
 
 	Faq saveOrUpdate(Faq model);
 	
-	List<Faq> findAll(String where, String orderBy,  int Limit);
+	List<Faq> findAll1();
+	
+	List<Faq> findAll2();
 }

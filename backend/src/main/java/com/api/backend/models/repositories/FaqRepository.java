@@ -24,6 +24,9 @@ public interface FaqRepository extends JpaRepository<Faq, Long> {
     @Query(value = "select count(*) from public.faqs x where x.id <> 0", nativeQuery = true)
     long count();
     
-    @Query(value = "select x.* from public.faqs x where ?1 order by ?2 LIMIT ?3", nativeQuery = true)
-    List<Faq> findAll(String where, String orderBy,  int Limit);
+    @Query(value = "select x.* from public.faqs x where x.sort <= 5 order by random()", nativeQuery = true)
+    List<Faq> findAll1();
+    
+    @Query(value = "select x.* from public.faqs x where x.sort > 5 order by random()", nativeQuery = true)
+    List<Faq> findAll2();
 }

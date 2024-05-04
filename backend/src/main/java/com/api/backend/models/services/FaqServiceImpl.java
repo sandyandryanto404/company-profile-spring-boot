@@ -37,8 +37,16 @@ public class FaqServiceImpl implements FaqService {
     }
 
 	@Override
-	public List<Faq> findAll(String where, String orderBy, int Limit) {
+	public List<Faq> findAll1() {
 		// TODO Auto-generated method stub
-		return findAll(where,  orderBy, Limit);
+		return repo.findAll1();
 	}
+
+	@Override
+	public List<Faq> findAll2() {
+		// TODO Auto-generated method stub
+		return repo.findAll2();
+	}
+
+	
 }

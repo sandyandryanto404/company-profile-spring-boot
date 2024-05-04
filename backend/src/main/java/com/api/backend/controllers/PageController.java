@@ -132,12 +132,12 @@ public class PageController {
 		header.put("description", faker.lorem().paragraph(10));
 		
 		HashMap<String, String> section1 = new HashMap<>();
-		header.put("title", faker.lorem().paragraph(3));
-		header.put("description", faker.lorem().paragraph(10));
+		section1.put("title", faker.lorem().paragraph(3));
+		section1.put("description", faker.lorem().paragraph(10));
 		
 		HashMap<String, String> section2 = new HashMap<>();
-		header.put("title", faker.lorem().paragraph(3));
-		header.put("description", faker.lorem().paragraph(10));
+		section2.put("title", faker.lorem().paragraph(3));
+		section2.put("description", faker.lorem().paragraph(10));
 		
 		List<Team> teams = TeamService.findAll("random()", 100);
 		
@@ -176,8 +176,8 @@ public class PageController {
 		
 		HashMap<String, Object> result = new HashMap<>();
 		
-		List<Faq> faq1 = FaqService.findAll("sort <= 5",  "random()", 100);
-		List<Faq> faq2 = FaqService.findAll("sort > 5",  "random()", 100);
+		List<Faq> faq1 = FaqService.findAll1();
+		List<Faq> faq2 = FaqService.findAll2();
 		
 		result.put("faq1", faq1);
 		result.put("faq2", faq2);

@@ -11,6 +11,8 @@
 
 package com.api.backend.models.services;
 
+import java.util.List;
+
 import com.api.backend.models.entities.Portfolio;
 
 public interface PortfolioService {
@@ -18,4 +20,8 @@ public interface PortfolioService {
 	Long TotalRows();
 
 	Portfolio saveOrUpdate(Portfolio model);
+
+	List<Portfolio> findAll();
+
+	Portfolio findBy(Long id);
 }
