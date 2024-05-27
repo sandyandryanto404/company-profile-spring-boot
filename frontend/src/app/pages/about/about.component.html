@@ -1,0 +1,133 @@
+ <!-- About section one-->
+ <section class="py-5 bg-light" id="scroll-target">
+   <div class="container px-5 my-5">
+     <div class="row gx-5 align-items-center">
+        @if(loading){
+          <div class="col-lg-6">
+              <div class="shimmer-wrapper text-center">
+                  <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:400px; width:100%;"></div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="shimmer-wrapper">
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              </div>
+          </div>
+        }@else{
+          <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://picsum.photos/id/10/600/400" alt="..." /></div>
+          <div class="col-lg-6">
+            <h2 class="fw-bolder">{{ content.header.title}}</h2>
+            <p class="lead fw-normal text-muted mb-0">{{ content.header.description}}</p>
+          </div>
+        }
+     </div>
+   </div>
+ </section>
+ <!-- About section two-->
+ <section class="py-5">
+   <div class="container px-5 my-5">
+     <div class="row gx-5 align-items-center">
+        @if(loading){
+          <div class="col-lg-6 order-first order-lg-last">
+              <div class="shimmer-wrapper text-center">
+                  <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:400px; width:100%;"></div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="shimmer-wrapper">
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              </div>
+          </div>
+        }@else{
+          <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://picsum.photos/id/12/600/400" alt="..." /></div>
+          <div class="col-lg-6">
+            <h2 class="fw-bolder">{{ content.section1.title}}</h2>
+            <p class="lead fw-normal text-muted mb-0">{{ content.section1.description}}</p>
+          </div>
+        }
+     </div>
+   </div>
+ </section>
+ <!-- Team members section-->
+ <section class="py-5 bg-light">
+   <div class="container px-5 my-5">
+     <div class="text-center">
+       <h2 class="fw-bolder">Our team</h2>
+       <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+     </div>
+     <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+        @if(loading){
+          <div class="col mb-5 mb-5 mb-xl-0">
+             <div class="text-center shimmer-wrapper">
+                <div class="profile">
+                    <div class="shimmer-circle shimmer-circle-md shimmer-animate"></div>
+                    <div class="profile-data">
+                        <div class="shimmer-line shimmer-line-br shimmer-line-60 shimmer-animate"></div>
+                        <div class="shimmer-line shimmer-line-br shimmer-line-full  shimmer-animate"></div>
+                    </div>
+                </div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+             </div>
+          </div>
+          <div class="col mb-5 mb-5 mb-xl-0">
+              <div class="text-center shimmer-wrapper">
+                  <div class="profile">
+                      <div class="shimmer-circle shimmer-circle-md shimmer-animate"></div>
+                      <div class="profile-data">
+                          <div class="shimmer-line shimmer-line-br shimmer-line-60 shimmer-animate"></div>
+                          <div class="shimmer-line shimmer-line-br shimmer-line-full  shimmer-animate"></div>
+                      </div>
+                  </div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              </div>
+          </div>
+          <div class="col mb-5 mb-5 mb-sm-0">
+              <div class="text-center shimmer-wrapper">
+                  <div class="profile">
+                      <div class="shimmer-circle shimmer-circle-md shimmer-animate"></div>
+                      <div class="profile-data">
+                          <div class="shimmer-line shimmer-line-br shimmer-line-60 shimmer-animate"></div>
+                          <div class="shimmer-line shimmer-line-br shimmer-line-full  shimmer-animate"></div>
+                      </div>
+                  </div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              </div>
+          </div>
+          <div class="col mb-5">
+              <div class="text-center shimmer-wrapper">
+                  <div class="profile">
+                      <div class="shimmer-circle shimmer-circle-md shimmer-animate"></div>
+                      <div class="profile-data">
+                          <div class="shimmer-line shimmer-line-br shimmer-line-60 shimmer-animate"></div>
+                          <div class="shimmer-line shimmer-line-br shimmer-line-full  shimmer-animate"></div>
+                      </div>
+                  </div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              </div>
+          </div>
+        }@else{
+          @for (team of content.teams; track team; let idx = $index) {
+            <div [ngClass]="getClasses(idx)">
+              <div class="text-center">
+                <img class="img-fluid rounded-circle mb-4 px-4" [src] = "'https://picsum.photos/id/'+(idx)+'/150/150'" alt="..." />
+                <h5 class="fw-bolder">{{ team.name }}</h5>
+                <div class="fst-italic text-muted">{{ team.positionName }}</div>
+              </div>
+            </div>
+          }
+        }
+     </div>
+   </div>
+ </section>

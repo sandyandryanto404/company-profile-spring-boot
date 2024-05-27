@@ -1,0 +1,79 @@
+<section class="py-5">
+  <div class="container px-5 my-5">
+    <div class="text-center mb-5">
+      <h1 class="fw-bolder">Frequently Asked Questions</h1>
+      <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
+    </div>
+    <div class="row gx-5">
+      <div class="col-xl-8">
+         @if(loading){
+          <div class="shimmer-wrapper text-center">
+              <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:300px; width:100%;"></div>
+              <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5 mt-3" style="height:300px; width:100%;"></div>
+              <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5 mt-3" style="height:300px; width:100%;"></div>
+          </div>
+         }@else{
+           <!-- FAQ Accordion 1-->
+            <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
+            <div class="accordion mb-5" id="accordionExample">
+              @for (faq of content.faqs1; track faq; let idx = $index) {
+                <div class="accordion-item">
+                  <h3 class="accordion-header" [id]="'heading'+faq.id"><button class="accordion-button" type="button"
+                    data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+faq.id" aria-expanded="true"
+                    [attr.aria-controls]="'collapse'+faq.id">{{ faq.question }}</button></h3>
+                  <div [ngClass]="idx === 0 ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" [id]="'collapse'+faq.id" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      {{ faq.answer }}
+                    </div>
+                  </div>
+                  </div>
+              }
+            </div>
+            <!-- FAQ Accordion 2-->
+            <h2 class="fw-bolder mb-3">Website Issues</h2>
+            <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
+              @for (faq of content.faqs2; track faq; let idx = $index) {
+                <div class="accordion-item">
+                  <h3 class="accordion-header" [id]="'heading'+faq.id"><button class="accordion-button" type="button"
+                    data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+faq.id" aria-expanded="true"
+                    [attr.aria-controls]="'collapse'+faq.id">{{ faq.question }}</button></h3>
+                  <div [ngClass]="idx === 0 ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" [id]="'collapse'+faq.id" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                      {{ faq.answer }}
+                    </div>
+                  </div>
+                  </div>
+              }
+            </div>
+         }
+      </div>
+      <div class="col-xl-4">
+          @if(loading){
+            <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:300px; width:100%;"></div>
+          }@else{
+            <div class="card border-0 bg-light mt-xl-5">
+                <div class="card-body p-4 py-lg-5">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                      <div class="h6 fw-bolder">Have more questions?</div>
+                      <p class="text-muted mb-4">
+                        Contact us at
+                        <br />
+                        <a href="mailto:sandy.andryanto404@gmail.com">sandy.andryanto404&#64;gmail.com</a>
+                      </p>
+                      <div class="h6 fw-bolder">Follow us</div>
+                      <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+                      <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                      <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                      <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          }
+      </div>
+    </div>
+  </div>
+</section>

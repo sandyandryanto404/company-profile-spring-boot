@@ -1,0 +1,124 @@
+ <!-- Page Content-->
+ <section class="py-5">
+   <div class="container px-5 my-5">
+     <div class="row gx-5">
+       <div class="col-lg-3">
+         @if(loading){
+            <div class="text-center shimmer-wrapper">
+                <div class="profile">
+                    <div class="shimmer-circle shimmer-circle-md shimmer-animate"></div>
+                    <div class="profile-data">
+                        <div class="shimmer-line shimmer-line-br shimmer-line-60 shimmer-animate"></div>
+                        <div class="shimmer-line shimmer-line-br shimmer-line-full  shimmer-animate"></div>
+                    </div>
+                </div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+            </div>
+         }@else{
+           <div class="d-flex align-items-center mt-lg-5 mb-4">
+              <img class="img-fluid rounded-circle" width="50" [src]="content.gender === 'F' ? '/assets/female.png' : '/assets/male.png'" alt="..." />
+              <div class="ms-3">
+                <div class="fw-bold">{{ content.firstName }} {{ content.lastName }}</div>
+                <div class="text-muted">{{ content.aboutMe }}</div>
+              </div>
+            </div>
+         }
+       </div>
+       <div class="col-lg-9">
+         <!-- Post content-->
+         <article>
+           <!-- Post header-->
+           <header class="mb-4">
+              @if(loading){
+                <div class="text-center">
+                    <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                    <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                </div>
+              }@else{
+                <!-- Post title-->
+                <h1 class="fw-bolder mb-1">{{ content.title }}</h1>
+                <!-- Post meta content-->
+                <div class="text-muted fst-italic mb-2">{{ dateConvert(content.createdAt) }}</div>
+                <!-- Post categories-->
+                @for (category of content.references; track category; let idx = $index) {
+                  <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">{{ category.name }}</a>
+                }
+              }
+           </header>
+           <!-- Preview image figure-->
+           <figure class="mb-4">
+               @if(loading){
+                  <div class="shimmer-wrapper text-center">
+                      <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:400px; width:100%;"></div>
+                  </div>
+               }@else{
+                <img class="img-fluid rounded" src="https://picsum.photos/id/27/900/400"  alt="..." />
+               }
+            </figure>
+           <!-- Post content-->
+           <section class="mb-5">
+              @if(loading){
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+                  <div class="shimmer-line shimmer-line-br shimmer-line-full shimmer-animate"></div>
+              }@else{
+                <p class="fs-5 mb-4">{{ content.content }}</p>
+              }
+           </section>
+         </article>
+         <!-- Comments section-->
+         <section>
+            @if(loadingComment){
+              <div class="shimmer-wrapper text-center">
+                  <div class="shimmer-circle shimmer-circle-md shimmer-animate rounded-3 my-5" style="height:200px; width:100%;"></div>
+              </div>
+            }@else{
+              <div class="card bg-light">
+                  <div class="card-body">
+                    <!-- Comment form-->
+
+                    @if(auth){
+                      <form class="mb-4" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm">
+
+                        <textarea
+                          placeholder="Join the discussion and leave a comment!"
+                          class="form-control"
+                          name="comment"
+                          [(ngModel)]="form.comment"
+                          required
+                          #comment="ngModel"
+                          [ngClass]="{ 'is-invalid': f.submitted && comment.errors }"
+                          rows="3"
+                        ></textarea>
+
+                        <div *ngIf="comment.errors && f.submitted" class="invalid-feedback">
+                          Message is required!
+                        </div>
+
+                        @if(loadingSubmit){
+                          <button class="btn btn-primary btn-sm mt-2 disabled" type="submit">
+                            <i class="spinner-border spinner-border-sm me-1"></i>Send Comment
+                          </button>
+                        }@else {
+                          <button class="btn btn-primary btn-sm mt-2"  type="submit">
+                            <i class="bi bi-chat-right-text me-1"></i>Send Comment
+                          </button>
+                        }
+
+                      </form>
+                    }
+
+                    @for (comment of comments; track comment; let idx = $index) {
+                       <app-comment [comment]="comment"></app-comment>
+                    }
+
+                  </div>
+                </div>
+            }
+         </section>
+       </div>
+     </div>
+   </div>
+ </section>
