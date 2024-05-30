@@ -41,8 +41,8 @@
                 <!-- Post meta content-->
                 <div class="text-muted fst-italic mb-2">{{ dateConvert(content.createdAt) }}</div>
                 <!-- Post categories-->
-                @for (category of content.references; track category; let idx = $index) {
-                  <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">{{ category.name }}</a>
+                @for (category of content.categories.split(','); track category; let idx = $index) {
+                  <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">{{ category }}</a>
                 }
               }
            </header>

@@ -16,7 +16,7 @@
            <!-- FAQ Accordion 1-->
             <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
             <div class="accordion mb-5" id="accordionExample">
-              @for (faq of content.faqs1; track faq; let idx = $index) {
+              @for (faq of content.faq1; track faq; let idx = $index) {
                 <div class="accordion-item">
                   <h3 class="accordion-header" [id]="'heading'+faq.id"><button class="accordion-button" type="button"
                     data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+faq.id" aria-expanded="true"
@@ -33,7 +33,7 @@
             <!-- FAQ Accordion 2-->
             <h2 class="fw-bolder mb-3">Website Issues</h2>
             <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
-              @for (faq of content.faqs2; track faq; let idx = $index) {
+              @for (faq of content.faq2; track faq; let idx = $index) {
                 <div class="accordion-item">
                   <h3 class="accordion-header" [id]="'heading'+faq.id"><button class="accordion-button" type="button"
                     data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+faq.id" aria-expanded="true"

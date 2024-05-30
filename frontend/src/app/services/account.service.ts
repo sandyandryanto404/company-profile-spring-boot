@@ -31,7 +31,7 @@ export class AccountService {
   }
 
   profileDetail(): Observable<any>{
-    return this.http.get(environment.backendURL+"/account/profile", { headers: this.authRequestHeader() });
+    return this.http.get(environment.backendURL+"/account/profile/detail", { headers: this.authRequestHeader() });
   }
 
   profileUpdate(data: any): Observable<any>{

@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
   form: any = {
     email: null,
     password: null,
-    password_confirm: null
+    passwordConfirm: null
   };
 
   constructor(private authService: AuthService, private titleService:Title, private router: Router, private storageService: StorageService) {
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
  }
 
  onSubmit(form: NgForm): void {
-  if(form.value.password != form.value.password_confirm){
+  if(form.value.password != form.value.passwordConfirm){
     form.controls['password'].setErrors({ "confirmed": true });
   }else{
     this.messageSuccess = "";
@@ -68,7 +68,8 @@ export class RegisterComponent implements OnInit {
     this.failed = false;
     let formSubmit = {
       email: form.value.email,
-      password: form.value.password
+      password: form.value.password,
+      passwordConfirm: form.value.passwordConfirm
     }
     this.authService.register(formSubmit).subscribe({
       next: response => {
@@ -79,7 +80,7 @@ export class RegisterComponent implements OnInit {
           form.reset();
           form.controls['email'].setErrors(null);
           form.controls['password'].setErrors(null);
-          form.controls['password_confirm'].setErrors(null);
+          form.controls['passwordConfirm'].setErrors(null);
           setTimeout(() => {
             this.router.navigate(['/auth/login']);
           }, 2000)

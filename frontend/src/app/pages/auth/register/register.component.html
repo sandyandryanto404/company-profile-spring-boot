@@ -83,22 +83,22 @@
                 <input
                     type="password"
                     class="form-control"
-                    name="password_confirm"
+                    name="passwordConfirm"
                     placeholder="Password Confirmation"
-                    [(ngModel)]="form.password_confirm"
+                    [(ngModel)]="form.passwordConfirm"
                     required
                     minlength="8"
-                    #password_confirm="ngModel"
-                    [ngClass]="{ 'is-invalid': f.submitted && password_confirm.errors }"
+                    #passwordConfirm="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && passwordConfirm.errors }"
                   />
 
                 <span class="input-group-text" id="basic-addon3">
                   <i class="bi bi-key"></i>
                 </span>
 
-                <div *ngIf="password_confirm.errors && f.submitted" class="invalid-feedback">
-                  <div *ngIf="password_confirm.errors['required']">Password Confirmation is required</div>
-                  <div *ngIf="password_confirm.errors['minlength']">
+                <div *ngIf="passwordConfirm.errors && f.submitted" class="invalid-feedback">
+                  <div *ngIf="passwordConfirm.errors['required']">Password Confirmation is required</div>
+                  <div *ngIf="passwordConfirm.errors['minlength']">
                       Password Confirmation must be at least 8 characters
                   </div>
                 </div>

@@ -46,7 +46,6 @@ import com.api.backend.utilities.JsonResponse;
 import com.api.backend.utilities.JwtResponse;
 
 @RestController
-@CrossOrigin
 public class AuthController {
 
 	@Autowired

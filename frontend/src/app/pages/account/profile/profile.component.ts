@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit {
         let user = response.data
 
         if(user.image){
-          this.image = environment.backendURL+"/Uploads/"+user.image
+          this.image = environment.backendURL+"/page/file/"+user.image
         }
 
         this.countries = countries
@@ -146,7 +146,7 @@ export class ProfileComponent implements OnInit {
             next: response => {
                setTimeout(() => {
                   this.loadingUpload = false;
-                  this.image = environment.backendURL+"/"+response.fileName
+                  this.image = environment.backendURL+"/page/file/"+response.data.fileName
                }, 2000)
             },
             error: err => {

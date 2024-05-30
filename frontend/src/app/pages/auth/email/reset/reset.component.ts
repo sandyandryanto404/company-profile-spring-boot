@@ -68,7 +68,8 @@ export class ResetComponent implements OnInit {
       this.failed = false;
       let formSubmit = {
         email: form.value.email,
-        password: form.value.password
+        password: form.value.password,
+        passwordConfirm: form.value.password_confirm
       }
       let token = this.route.snapshot.params['token']
       this.authService.emailReset(token, formSubmit).subscribe({

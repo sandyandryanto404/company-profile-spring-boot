@@ -77,7 +77,7 @@ export class DetailComponent implements OnInit {
      let article_id = this.content.id
      this.articleService.commentList(article_id).subscribe((response: any) => {
       setTimeout(() => {
-          this.comments = response.data.comments;
+          this.comments = response.data;
           this.loadingComment = false;
       }, 1500)
   }, (error) => {
@@ -96,7 +96,7 @@ export class DetailComponent implements OnInit {
     this.loadingSubmit = true;
     this.failed = false;
     this.articleService.commentCreate(article_id, form.value).subscribe({
-      next: data => {
+      next: () => {
         setTimeout(() => {
           this.loadingSubmit = false;
           this.failed = false;

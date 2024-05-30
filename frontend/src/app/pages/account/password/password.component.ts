@@ -69,7 +69,7 @@ export class PasswordComponent implements OnInit {
       let formSubmit = {
         oldPassword: form.value.current_password,
         newPassword: form.value.password,
-        confirmNewPassword: form.value.password_confirm
+        passwordConfirm: form.value.password_confirm
       }
       this.accountService.passwordUpdate(formSubmit).subscribe({
         next: response => {

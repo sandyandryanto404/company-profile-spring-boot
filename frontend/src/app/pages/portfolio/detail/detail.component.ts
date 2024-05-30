@@ -46,12 +46,13 @@ export class DetailComponent implements OnInit {
   loadContent(): void{
     let id = this.route.snapshot.params['id']
     this.portfolioService.detail(id).subscribe((response: any) => {
+        console.log(response)
         setTimeout(() => {
             this.content = response.data;
             this.loading = false;
         }, 1500)
     }, (error) => {
-        this.router.navigate(['/unavailable']);
+        //this.router.navigate(['/unavailable']);
     });
   }
 

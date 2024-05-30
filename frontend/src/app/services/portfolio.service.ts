@@ -26,7 +26,7 @@ export class PortfolioService {
   }
 
   detail(id: number): Observable<any>{
-    return this.http.get(environment.backendURL+"/portfolio/"+id, { headers: { Accept: 'application/json' } });
+    return this.http.get(environment.backendURL+"/portfolio/detail/"+id, { headers: { Accept: 'application/json' } });
   }
 
 }

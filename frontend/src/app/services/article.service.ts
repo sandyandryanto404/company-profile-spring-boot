@@ -43,7 +43,7 @@ export class ArticleService {
   }
 
   commentCreate(id: number, data: any): Observable<any>{
-    return this.http.post(environment.backendURL+"/article/comments/"+id, data, { headers: this.authRequestHeader() });
+    return this.http.post(environment.backendURL+"/article/comment/"+id, data, { headers: this.authRequestHeader() });
   }
 
 }
